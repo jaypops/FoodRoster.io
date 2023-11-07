@@ -1,0 +1,49 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.whole {
+  margin: 100px 50px;
+}
+.main-roster {
+  background-color: var(--wcolor);
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.main-roster img {
+  max-width: 400px;
+  min-height: fit-content;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.content h3 {
+  font-size: 24px;
+}
+.content {
+  padding: 16px;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  position: relative;
+  top: 3rem;
+}
+.remove h4 {
+  color: var(--rcolor);
+  cursor: pointer;
+}
+.remove h4:hover {
+  text-decoration: underline;
+}
+@media (max-width: 730px) {
+  .main-roster img {
+    max-width: 150px;
+    min-height: 50px;
+  }
+  .content {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,51 @@
+.roster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+}
+.roster h1 {
+  text-transform: capitalize;
+  font-family: "Dela Gothic One", cursive;
+  font-size: 4rem;
+  border-bottom: 4px solid var(--blcolor);
+}
+.food,
+.space {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.btn {
+  border: 1px solid var(--blcolor);
+  padding: 0.7rem;
+  border-radius: 5px;
+  background-color: var(--blcolor);
+  font-weight: bold;
+  color: var(--wcolor);
+  cursor: pointer;
+  font-size: 17px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn:hover {
+  background-color: var(--dbcolor);
+}
+.btn-active {
+  background-color: var(--dbcolor);
+}
+.btn-non-active {
+  background-color: var(--blcolor);
+}
+.line {
+  color: var(--blcolor);
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 730px) {
+  .roster h1 {
+    font-size: 3rem;
+  }
+  .btn{
+    font-size: 14px;
+  }
+}

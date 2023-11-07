@@ -1,0 +1,69 @@
+form {
+  font-size: 1.4rem;
+  display: grid;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: var(--blicolor);
+  border-radius: 15px;
+  font-family: "Lato", sans-serif;
+}
+.form {
+  grid-template-columns: 1fr 1.5fr;
+  padding: 1.2rem;
+  max-width: 50%;
+  position: absolute;
+  z-index: 1000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.title {
+  color: var(--wcolor);
+}
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.4rem;
+  padding: 0.1rem;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+input:focus,
+select:focus {
+  outline: none;
+}
+.cover {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  left: 200px;
+  padding: 0 10px 0 0;
+}
+.btn-n {
+  border: 1px solid var(--blcolor);
+  padding: 0.25rem;
+  border-radius: 5px;
+  background-color: var(--blcolor);
+  font-weight: bold;
+  color: var(--wcolor);
+  cursor: pointer;
+  font-size: 17px;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media (max-width: 730px) {
+  form {
+    font-size: 1rem;
+  }
+  input,
+  select {
+    padding: 0.09rem;
+    font-size: 1.2rem;
+  }
+}
