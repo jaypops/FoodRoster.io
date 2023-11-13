@@ -25,7 +25,7 @@ export default function App() {
   }
   function handleremove(id) {
     setfoods((foodList) => foodList.filter((food) => food.id !== id));
-    setallfood((foodList) => foodList.filter((food) => food.id !== id))
+    setallfood((foodLists) => foodLists.filter((food) => food.id !== id))
   }
   function filterItem(selectedTime) {
     settime(selectedTime);
