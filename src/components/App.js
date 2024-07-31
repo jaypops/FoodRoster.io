@@ -6,6 +6,7 @@ import Items from "./items";
 import Form from "./Form";
 import logo from "../images/logo.png";
 import { useState } from "react";
+import LaptopOnlyPage from "./LaptopOnlyPage";
 
 export default function App() {
   const [Addfood, setAddfood] = useState(false);
@@ -25,7 +26,7 @@ export default function App() {
   }
   function handleremove(id) {
     setfoods((foodList) => foodList.filter((food) => food.id !== id));
-    setallfood((foodLists) => foodLists.filter((food) => food.id !== id))
+    setallfood((foodLists) => foodLists.filter((food) => food.id !== id));
   }
   function filterItem(selectedTime) {
     settime(selectedTime);
@@ -46,42 +47,45 @@ export default function App() {
     setfoods(uniqueFood);
   }
   return (
-    <div className="main-body">
-      <div className="nav">
-        <div>
-          <Weeks day={day} onfilterDay={filterDay} onsetday={setday} />
+    <>
+      <LaptopOnlyPage />
+      <div className="main-body">
+        <div className="nav">
+          <div>
+            <Weeks day={day} onfilterDay={filterDay} onsetday={setday} />
+          </div>
+          <div className="name-nav">
+            <Name />
+          </div>
         </div>
-        <div className="name-nav">
-          <Name />
-        </div>
-      </div>
-      <Roster
-        onAddfood={handleaddform}
-        Addfood={Addfood}
-        time={time}
-        filterItem={filterItem}
-        onsetallfood={setallfood}
-      />
-      {Addfood && (
-        <Form
-          onaddfoodlist={handleaddfood}
+        <Roster
+          onAddfood={handleaddform}
+          Addfood={Addfood}
           time={time}
-          ontime={settime}
-          image={image}
-          onsetimage={setimage}
-          onsetimagelist={setimagelist}
-          day={day}
-          onsetday={setday}
+          filterItem={filterItem}
+          onsetallfood={setallfood}
         />
-      )}
-      {foods.length > 0 && (
-        <Items
-          onremove={handleremove}
-          image={image}
-          imagelist={imagelist}
-          foods={foods}
-        />
-      )}
-    </div>
+        {Addfood && (
+          <Form
+            onaddfoodlist={handleaddfood}
+            time={time}
+            ontime={settime}
+            image={image}
+            onsetimage={setimage}
+            onsetimagelist={setimagelist}
+            day={day}
+            onsetday={setday}
+          />
+        )}
+        {foods.length > 0 && (
+          <Items
+            onremove={handleremove}
+            image={image}
+            imagelist={imagelist}
+            foods={foods}
+          />
+        )}
+      </div>
+    </>
   );
 }
